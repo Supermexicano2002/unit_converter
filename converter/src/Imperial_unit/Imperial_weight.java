@@ -1,5 +1,5 @@
 package Imperial_unit;
-/*in this class we put the */
+/*in this class we put the imperial weight units*/
 /* to do:
  * 1- add troy units
  * 
@@ -45,14 +45,14 @@ public class Imperial_weight
 		break;
 		}
 		if(invalid==true){
-			System.out.println("ERROR: GuiTest/src/imperial_unit/Imperial_weight.java/pound_converter: invalid number_the_unit");
+			System.out.println("ERROR: converter/src/imperial_unit/Imperial_weight.java/pound_converter: invalid number_the_unit");
 			System.exit(0);}
 		
 		return iresult;
 		}
 	
 	
-	public double imperial_converter(int number_the_unit, double pound)
+	public double imperial_weight_converter(int number_the_unit, double pound)
 	{
 	double giresult=0;	
 	boolean invalid= false;
@@ -85,8 +85,9 @@ public class Imperial_weight
 	break;
 	}
 	if(invalid==true){
-		System.out.println("ERROR: GuiTest/src/imperial_unit/Imperial_weight.java/imperial_converter: invalid number_the_unit");
-		System.exit(0);}
+		System.out.println("ERROR: converter/src/imperial_unit/Imperial_weight.java/imperial_weight_converter: invalid number_the_unit");
+		System.exit(0);
+						}
 	
 	return giresult;
 	}
