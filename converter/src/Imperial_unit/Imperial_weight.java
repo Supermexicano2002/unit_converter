@@ -4,7 +4,7 @@ package Imperial_unit;
  * 1- add troy units
  * 
  * */
-class Imperial_weight 
+public class Imperial_weight 
 {							
 	public double kg_to_lb(double kg){
 		double lb=0;

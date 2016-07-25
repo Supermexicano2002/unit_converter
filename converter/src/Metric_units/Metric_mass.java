@@ -1,6 +1,6 @@
 package Metric_units;
 
-class Metric_mass{
+public class Metric_mass{
 	// Possible weight units
 	private final String[] units = {"kg", "hg", "dag", "g", "dg", "cg", "mg"};
 	// Possible values 
