@@ -1,6 +1,6 @@
 package test;
 import java.util.*;
-public class pound_cov {
+class pound_cov {
 	public static double pound_converter(int number_the_unit, double imperialvalue){
 		double iresult=0;
 		boolean invalid= false;
