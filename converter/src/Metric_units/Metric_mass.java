@@ -1,5 +1,7 @@
 package Metric_units;
 
+import java.math.BigDecimal;
+
 public class Metric_mass{
 	// Possible weight units
 	private final String[] units = {"kg", "hg", "dag", "g", "dg", "cg", "mg"};
@@ -27,11 +29,11 @@ public class Metric_mass{
 			if (units[i] == unit){
 				return number / x_to_mg[i];
 				
+				
 			}
 			
 		}
-		return 0.0;
-		
+		return 0.0;		
 		
 	}
 	// This converts an x metric weight unit into another x metric weight unit
@@ -41,12 +43,14 @@ public class Metric_mass{
 	 * 
 	 * 
 	 */
-	public double x_to_x(double input, String input_u, String output_u){
+	public String x_to_x(double input, String input_u, String output_u){
 		// Converts input into mg
 		double mg_result = mg_converter(input, input_u);
 		// Convert mg input into desired weight unit
 		double x_result = mg_to_x(mg_result, output_u);
-		return x_result;
+		String str_result = String.valueOf(x_result);
+		BigDecimal bg_result = new BigDecimal(str_result);
+		return bg_result.toPlainString();
 		
 	
 	}
