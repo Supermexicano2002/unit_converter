@@ -1,6 +1,6 @@
 package Imperial_unit;
 
-public class Imperial_Length 				{
+public class Imperial_length			{
 boolean invalid = false;
 public double imperial_Length_tofeet(int number_the_unit, double imperialvalue){
 double feets=0;
