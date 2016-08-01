@@ -1,4 +1,6 @@
-package Metric_units;
+package test;
+
+import Metric_units.Metric_mass;
 
 public class Metric_mass_test {
 
