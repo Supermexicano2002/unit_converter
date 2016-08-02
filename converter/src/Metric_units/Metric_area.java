@@ -3,12 +3,12 @@ package Metric_units;
 import java.math.BigDecimal;
 
 public class Metric_area {
-	// Possible weight units
+	// Possible area units
 		private final String[] units = {"km2", "hm2", "dam2", "m2", "dm2", "cm2", "mm2"};
 		// Possible values 
 		private final double[] x_to_mm2 = {1000000000000.0,10000000000.0,100000000.0,1000000.0,10000.0,100.0,1.0};
 		
-		// This converts every possible metric weigth unit into mg
+		// This converts every possible metric area unit into mm2
 		public double mm2_converter(double number, String unit){
 
 			for (int i = 0; i < units.length; i++){
@@ -22,7 +22,7 @@ public class Metric_area {
 			return 0.0;
 			
 		}
-		// This converts mm2 into every possible metric weight unit
+		// This converts mm2 into every possible metric area unit
 		public double mm2_to_x(double number, String unit){
 			
 			for(int i = 0; i < units.length; i++){
