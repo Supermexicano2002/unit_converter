@@ -6,11 +6,7 @@ package Imperial_unit;
  * */
 public class Imperial_weight 
 {							
-	public double kg_to_lb(double kg){
-		double lb=0;
-		lb=kg*2.20462262185;
-		return lb;
-	}
+
 	public double pound_converter(int number_the_unit, double imperialvalue)
 		{
 		double iresult=0;
@@ -52,7 +48,7 @@ public class Imperial_weight
 		}
 	
 	
-	public double imperial_weight_converter(int number_the_unit, double pound)
+	public double pound_to_x(int number_the_unit, double pound)
 	{
 	double giresult=0;	
 	boolean invalid= false;
@@ -91,4 +87,6 @@ public class Imperial_weight
 	
 	return giresult;
 	}
+	
+	
 } 
