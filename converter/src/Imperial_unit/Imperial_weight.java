@@ -4,89 +4,62 @@ package Imperial_unit;
  * 1- add troy units
  * 
  * */
-public class Imperial_weight 
-{							
 
-	public double pound_converter(int number_the_unit, double imperialvalue)
-		{
-		double iresult=0;
-		boolean invalid= false;
+import java.math.BigDecimal;
+
+public class Imperial_weight{
+	private final String[] units = {"gr", "dr", "oz", "lb", "st", "qtr", "cwt", "t"};
+	// Possible values 
+	private final double[] x_to_lb = {1 / 7000.0,1 / 256.0,1 / 16,1.0,1 / 14.0, 28.0, 112.0, 2240.0};
 		
-		switch(number_the_unit){
-		case 1:/*grain (gr)*/
-		iresult = imperialvalue/7000;
-		break;
-		case 2:/*drachm (dr)*/
-		iresult = imperialvalue/256;
-		break;
-		case 3:/*ounce (oz)*/
-		iresult = imperialvalue/16;
-		break;
-		case 4:/*pound (lb)*/
-		iresult = imperialvalue;
-		break;
-		case 5:/*stone (st)*/
-		iresult = imperialvalue*14;
-		break;
-		case 6:/*quarter (qr or qtr)*/
-		iresult = imperialvalue*28;
-		break;
-		case 7:/*houndredweight (cwt)*/
-		iresult = imperialvalue*112;
-		break;
-		case 8:/*ton (t)*/
-		iresult = imperialvalue*2240;
-		break;
-		default: invalid = true;
-		break;
+		// This converts every possible metric weigth unit into mg
+		public double lb_converter(double number, String unit){
+
+			for (int i = 0; i < units.length; i++){
+				if (units[i] == unit){
+					double lb = number * x_to_lb[i];
+					return lb;
+				}
+			
+				
+			}
+			return 0.0;
+			
 		}
-		if(invalid==true){
-			System.out.println("ERROR: converter/src/imperial_unit/Imperial_weight.java/pound_converter: invalid number_the_unit");
-			System.exit(0);}
+		// This converts mg into every possible metric weight unit
+		public double lb_to_x(double number, String unit){
+			
+			for(int i = 0; i < units.length; i++){
+				if (units[i] == unit){
+					return number / x_to_lb[i];
+					
+					
+				}
+				
+			}
+			return 0.0;		
+			
+		}
+		// This converts an x metric weight unit into another x metric weight unit
+		/* This method takes a double input, a 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
+		public String x_to_x(double input, String input_u, String output_u){
+			// Converts input into mg
+			double mg_result = lb_converter(input, input_u);
+			// Convert mg input into desired weight unit
+			double x_result = lb_to_x(mg_result, output_u);
+			String str_result = String.valueOf(x_result);
+			BigDecimal bg_result = new BigDecimal(str_result);
+			return bg_result.toPlainString();
+			
 		
-		return iresult;
 		}
 	
 	
-	public double pound_to_x(int number_the_unit, double pound)
-	{
-	double giresult=0;	
-	boolean invalid= false;
-	switch(number_the_unit){
-	case 1:/*grain (gr)*/
-	giresult = pound*7000;
-	break;
-	case 2:/*drachm (dr)*/
-	giresult = pound*256;
-	break;
-	case 3:/*ounce (oz)*/
-	giresult = pound*16;
-	break;
-	case 4:/*pound (lb)*/
-	giresult = pound;
-	break;
-	case 5:/*stone (st)*/
-	giresult = pound/14;
-	break;
-	case 6:/*quarter (qr or qtr)*/
-	giresult = pound/28;
-	break;
-	case 7:/*houndredweight (cwt)*/
-	giresult = pound/112;
-	break;
-	case 8:/*ton (t)*/
-	giresult = pound/2240;
-	break;
-	default: invalid = true;
-	break;
-	}
-	if(invalid==true){
-		System.out.println("ERROR: converter/src/imperial_unit/Imperial_weight.java/imperial_weight_converter: invalid number_the_unit");
-		System.exit(0);
-						}
 	
-	return giresult;
-	}
-	
-	
-} 
+}
+
