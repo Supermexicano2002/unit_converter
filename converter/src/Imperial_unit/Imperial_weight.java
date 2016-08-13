@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 
 public class Imperial_weight{
 	/*possible units (name/abriviation)*/
-	private final String[] units = {"gr", "dr", "oz", "lb", "st", "qtr", "cwt", "it"};
+	private final String[] units = {"gr", "dr", "oz", "lb", "st", "qtr", "cwt", "it", "ut"};
 	/*values for the convertions*/
-	private final double[] x_to_lb = {1 / 7000.0,  1 / 256.0,  1 / 16,   1.0 ,  14.0,    28.0,    112.0,    2240.0};
+	private final double[] x_to_lb = {1 / 7000.0,  1 / 256.0,  1 / 16,   1.0 ,  14.0,    28.0,    112.0,    2240.0, 2000};
 		
 	 /*inputs: a value to convert (double), and the unit (string)
 	 * outputs: the converted value in pounds
@@ -47,7 +47,6 @@ public class Imperial_weight{
 			
 		}
 		
-		//WTF is this below?
 		
 		// This converts an x metric weight unit into another x metric weight unit
 		/* This method takes a double input, a 
@@ -55,7 +54,7 @@ public class Imperial_weight{
 		 * 
 		 * 
 		 * 
-		 
+		 */
 		public String x_to_x(double input, String input_u, String output_u){
 			// Converts input into mg
 			double mg_result = lb_converter(input, input_u);
@@ -68,7 +67,7 @@ public class Imperial_weight{
 		
 		}
 	
-	*/
+
 	
 }
 
