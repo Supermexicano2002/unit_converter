@@ -4,17 +4,17 @@ package Imperial_unit;
 import java.math.BigDecimal;
 
 public class Imperial_weight{
-	/*possible units (name/abriviation)*/
+	/*possible units (name/abreviation)*/
 	private final String[] units = {"gr", "dr", "oz", "lb", "st", "qtr", "cwt", "it", "ut"};
 	/*values for the convertions*/
-	private final double[] x_to_lb = {1 / 7000.0,  1 / 256.0,  1 / 16,   1.0 ,  14.0,    28.0,    112.0,    2240.0, 2000};
+	private final double[] x_to_lb = {1 / 7000.0,  1 / 256.0,  1 / 16.0,   1.0 ,  14.0,    28.0,    112.0,    2240.0, 2000.0};
 		
 	 /*inputs: a value to convert (double), and the unit (string)
 	 * outputs: the converted value in pounds
 	 * */	
 		public double lb_converter(double number, String unit)
 		{
-			double value=0;
+			double value = 0.0;
 			for (int i = 0; i < units.length; i++)/* go trough all the Im. units*/
 			{ 
 				if (units[i] == unit)/*finds the matching unit */
@@ -25,6 +25,7 @@ public class Imperial_weight{
 			
 				
 			}
+			
 			return value;
 			
 		 }
